@@ -54,7 +54,7 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="relative overflow-hidden bg-white pt-[105px]"
+      className="relative overflow-hidden bg-white"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

@@ -62,8 +62,21 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
+}
+.tp-btn2 {
+  background: none !important;
+  color: #000 !important;
+}
+.tp-btn3 {
+  background: none !important;
+  color: #ff0000 !important;
+}
+.tp-btn2:hover,
+.tp-btn3:hover {
+  background: var(--tp-primary) !important;
+  color: #fff !important;
 }
 
 /* tp-offer-item: original card with shadow */
