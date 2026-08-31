@@ -107,7 +107,7 @@ export default function HeroSlider() {
                           </div>
                         </div>
                         <div className="w-full lg:w-1/2 px-3 order-2">
-                          <div className={`tp-hero-7-thumb relative transition-all duration-700 ${i === active ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[100px]"} lg:ml-[-40px]`}>
+                          <div className={`tp-hero-7-thumb relative transition-all duration-700 ${i === active ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[100px]"} lg:ml-[-100px] xl:ml-[-160px]`}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={s.image} alt={s.title} className="w-full h-auto object-contain max-h-[420px]" />
                           </div>
@@ -116,7 +116,7 @@ export default function HeroSlider() {
                     ) : (
                       <>
                         <div className="w-full lg:w-1/2 px-3 order-2 lg:order-1">
-                          <div className={`tp-hero-7-thumb relative transition-all duration-700 ${i === active ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[100px]"} lg:ml-[-40px]`}>
+                          <div className={`tp-hero-7-thumb relative transition-all duration-700 ${i === active ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[100px]"} lg:ml-[-100px] xl:ml-[-160px]`}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={s.image} alt={s.title} className="w-full h-auto object-contain max-h-[420px]" />
                           </div>

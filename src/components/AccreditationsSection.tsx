@@ -15,10 +15,10 @@ export default function AccreditationsSection() {
           <div className="w-full lg:w-2/3 px-3">
             <div className="tp-team-6-box">
               <div className="row flex flex-wrap -mx-2">
-                {Array.from({ length: 20 }).map((_, i) => {
+                {Array.from({ length: 23 }).map((_, i) => {
                   const idx = i + 1;
-                  const hashes = ["81e322cc","f784f322","103ddd09","69800e1f","84cbfc35","3ebafe30","ca43c14d","79f349fc","e41397be","7b43d097","b19c94ec","ee0a3939","0c353cb4","8d50db81","f273b437","7444e3fd","a3a1a42f","9c0ce578","a19865ea","79ee1f1c"];
-                  const hash = hashes[i % hashes.length];
+                  const hashes = ["81e322cc","f784f322","103ddd09","69800e1f","84cbfc35","3ebafe30","ca43c14d","79f349fc","e41397be","7b43d097","b19c94ec","ee0a3939","0c353cb4","8d50db81","f273b437","7444e3fd","a3a1a42f","9c0ce578","a19865ea","79ee1f1c","cab34110","b2b202d6","1adf2258"];
+                  const hash = hashes[i];
                   return (
                     <div key={idx} className="w-1/2 md:w-1/4 px-2 mb-4">
                       <div className="tp-team-6-item relative">

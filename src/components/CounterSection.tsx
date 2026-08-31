@@ -59,8 +59,33 @@ export default function CounterSection() {
                   <div key={idx} className="w-1/2 px-0">
                     <div className={`tp-counter-item text-center p-6 lg:p-8 border-gray-100 ${item.active ? "bg-[#f8fafc]" : "bg-white"} ${idx % 2 === 0 ? "border-r" : ""} ${idx < 2 ? "border-b" : ""}`}>
                       <div className="tp-counter-item-icon mb-3 flex justify-center text-[#0c598f]">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef6ff] text-sm">
-                          {idx === 0 ? "◇" : idx === 1 ? "◈" : idx === 2 ? "★" : "⬡"}
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef6ff]">
+                          {idx === 0 ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                              <rect x="3" y="3" width="18" height="18" rx="2" />
+                              <path d="M9 9h6v6H9z" />
+                              <path d="M9 3v6M15 3v6M9 15v6M15 15v6M3 9h6M15 9h6M3 15h6M15 15h6" />
+                            </svg>
+                          ) : idx === 1 ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                              <circle cx="12" cy="8" r="4" />
+                              <path d="M5 20c1.5-3 4.5-4.5 7-4.5s5.5 1.5 7 4.5" />
+                              <path d="M16 8l3-1 1 3-3 1" />
+                            </svg>
+                          ) : idx === 2 ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                              <circle cx="12" cy="12" r="9" />
+                              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                              <circle cx="9" cy="9" r="1" fill="currentColor" />
+                              <circle cx="15" cy="9" r="1" fill="currentColor" />
+                            </svg>
+                          ) : (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                              <path d="M3 9l9-6 9 6v9l-9 6-9-6z" />
+                              <path d="M12 3v18" />
+                              <path d="M3 9h18" />
+                            </svg>
+                          )}
                         </span>
                       </div>
                       <div className="tp-counter-item-content">
