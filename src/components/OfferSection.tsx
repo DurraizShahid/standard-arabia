@@ -50,13 +50,13 @@ export default function OfferSection() {
                       </h4>
                     </div>
                   </div>
-                  <div className="tp-offer-item-thumb relative overflow-hidden mx-3 mb-3">
-                    <Link href={s.href} className="block">
+                  <div className="tp-offer-item-thumb relative overflow-hidden mx-3 mb-4 flex justify-center">
+                    <Link href={s.href} className="block w-full">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={s.img}
                         alt={s.title}
-                        className="w-full h-[180px] object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full aspect-square max-h-[200px] object-cover transition-transform duration-700 group-hover:scale-110 mx-auto"
                         style={{ borderRadius: "50%" }}
                       />
                     </Link>
@@ -67,9 +67,9 @@ export default function OfferSection() {
             ))}
           </div>
 
-          <div className="row flex flex-wrap -mx-3 mt-2">
+          <div className="row flex flex-wrap -mx-3 mt-6">
             <div className="w-full px-3">
-              <div className="ser-btn flex justify-center lg:justify-start">
+              <div className="ser-btn flex justify-center">
                 <Link
                   href="/services"
                   className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-8 py-3 text-sm font-semibold text-white hover:bg-[#09406a] transition-colors"

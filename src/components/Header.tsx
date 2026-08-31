@@ -235,25 +235,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Secondary service strip - visible only desktop, matches original service-nav? */}
-        <div className="hidden border-b border-gray-50 bg-[#fcfcfc] lg:block">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center gap-1 py-2">
-              {servicesMega.slice(0, 8).map((s) => (
-                <Link
-                  key={s.title}
-                  href={s.href}
-                  className="rounded-full px-3 py-1.5 text-xs font-medium text-[#565969] hover:bg-white hover:text-[#0c598f] hover:shadow-sm transition-all border border-transparent hover:border-gray-100"
-                >
-                  {s.title}
-                </Link>
-              ))}
-              <Link href="/services" className="ml-2 rounded-full bg-[#0c598f] px-4 py-1.5 text-xs font-semibold text-white hover:bg-[#09406a] transition-colors">
-                All Services →
-              </Link>
-            </div>
-          </div>
-        </div>
+
       </header>
 
       {/* Mobile drawer */}
