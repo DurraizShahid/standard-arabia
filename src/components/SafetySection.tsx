@@ -1,7 +1,7 @@
 export default function SafetySection() {
   return (
-    <section className="tp-video-area relative pt-[60px] pb-[60px] lg:pt-[120px] lg:pb-[120px] bg-white">
-      <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+    <section className="tp-video-area relative pt-[60px] pb-[60px] lg:pt-[120px] lg:pb-[120px] bg-transparent">
+      <div className="container">
         <div className="row flex flex-wrap -mx-3 items-center">
           <div className="w-full lg:w-5/12 px-3 mb-8 lg:mb-0">
             <div className="tp-video-thumb">
@@ -12,7 +12,7 @@ export default function SafetySection() {
           <div className="w-full lg:w-7/12 px-3">
             <div className="tp-video-wrapper lg:pl-8">
               <div className="tp-video-title-wrapper mb-6">
-                <h3 className="tp-section-title text-[28px] lg:text-[36px] font-bold text-[#0c598f] leading-tight" style={{ fontFamily: "var(--font-jakarta)" }}>
+                <h3 className="tp-section-title text-white text-[32px] lg:text-[55px] font-bold leading-tight" style={{ fontFamily: "var(--font-jakarta)" }}>
                   To Promote an Effective Safety Culture
                 </h3>
               </div>

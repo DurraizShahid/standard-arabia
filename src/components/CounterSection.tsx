@@ -2,19 +2,19 @@ import Link from "next/link";
 
 export default function CounterSection() {
   return (
-    <section className="tp-counter-area relative pt-[60px] pb-[60px] lg:pt-[120px] lg:pb-[120px] bg-white overflow-hidden">
+    <section className="tp-counter-area relative pt-[60px] pb-[60px] lg:pt-[120px] lg:pb-[120px] bg-transparent overflow-hidden">
       <div className="tp-counter-shape pointer-events-none">
         <img src="https://standardarabia.com/assets/img/bg/counter-bg-left.webp" alt="" className="shape-1 absolute left-0 top-0 h-full w-auto object-cover opacity-100 hidden lg:block" />
         <img src="https://standardarabia.com/assets/img/counter/counter-crain.webp" alt="" className="shape-2 absolute right-0 bottom-0 h-[80%] w-auto object-contain opacity-90 hidden lg:block" />
       </div>
 
-      <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8 relative">
+      <div className="container relative">
         <div className="row flex flex-wrap -mx-3">
           <div className="w-full lg:w-1/2 px-3 mb-10 lg:mb-0">
             <div className="tp-counter-title-wrapper mb-10">
               <div className="tp-counter-title-wrap mb-10">
                 <span className="tp-section-title-pre text-sm font-semibold tracking-widest text-[#0c598f] uppercase">Trustworthy & reliable</span>
-                <h3 className="tp-section-title text-[32px] lg:text-[48px] font-bold leading-tight text-[#525353] mt-2" style={{ fontFamily: "var(--font-jakarta)" }}>
+                <h3 className="tp-section-title text-[40px] lg:text-[55px] font-bold leading-tight text-[#0c598f] mt-2" style={{ fontFamily: "var(--font-jakarta)" }}>
                   Counting on Excellence, Everywhere We Serve
                 </h3>
               </div>
@@ -22,7 +22,7 @@ export default function CounterSection() {
               <div className="tp-counter-btn-wrapper flex flex-wrap items-center gap-6">
                 <Link
                   href="/contact"
-                  className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-7 py-3 text-sm font-semibold text-white hover:bg-[#09406a] transition-colors"
+                  className="tp-btn bg-[#0c598f] text-white hover:bg-[#09406a]"
                 >
                   Contact Now
                   <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -57,30 +57,30 @@ export default function CounterSection() {
                   { end: "14", label: "Branches / Site Offices", active: false },
                 ].map((item, idx) => (
                   <div key={idx} className="w-1/2 px-0">
-                    <div className={`tp-counter-item text-center p-6 lg:p-8 border-gray-100 ${item.active ? "bg-[#f8fafc]" : "bg-white"} ${idx % 2 === 0 ? "border-r" : ""} ${idx < 2 ? "border-b" : ""}`}>
-                      <div className="tp-counter-item-icon mb-3 flex justify-center text-[#0c598f]">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef6ff]">
+                    <div className={`tp-counter-item text-center flex flex-col justify-center p-10 border-gray-100 ${item.active ? "bg-[#f8fafc]" : "bg-white"} ${idx % 2 === 0 ? "border-r" : ""} ${idx < 2 ? "border-b" : ""}`} style={{ minHeight: "241px" }}>
+                      <div className="tp-counter-item-icon flex justify-center text-[#0c598f] mb-[15px]">
+                        <span className="flex items-center justify-center">
                           {idx === 0 ? (
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                               <rect x="3" y="3" width="18" height="18" rx="2" />
                               <path d="M9 9h6v6H9z" />
                               <path d="M9 3v6M15 3v6M9 15v6M15 15v6M3 9h6M15 9h6M3 15h6M15 15h6" />
                             </svg>
                           ) : idx === 1 ? (
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                               <circle cx="12" cy="8" r="4" />
                               <path d="M5 20c1.5-3 4.5-4.5 7-4.5s5.5 1.5 7 4.5" />
                               <path d="M16 8l3-1 1 3-3 1" />
                             </svg>
                           ) : idx === 2 ? (
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                               <circle cx="12" cy="12" r="9" />
                               <path d="M8 14s1.5 2 4 2 4-2 4-2" />
                               <circle cx="9" cy="9" r="1" fill="currentColor" />
                               <circle cx="15" cy="9" r="1" fill="currentColor" />
                             </svg>
                           ) : (
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                               <path d="M3 9l9-6 9 6v9l-9 6-9-6z" />
                               <path d="M12 3v18" />
                               <path d="M3 9h18" />
@@ -89,10 +89,10 @@ export default function CounterSection() {
                         </span>
                       </div>
                       <div className="tp-counter-item-content">
-                        <h4 className="tp-counter-title text-[36px] lg:text-[48px] font-bold leading-none text-[#525353]" style={{ fontFamily: "var(--font-jakarta)" }}>
+                        <h4 className="tp-counter-title text-[48px] font-bold leading-none text-[#525353] mb-2" style={{ fontFamily: "var(--font-jakarta)" }}>
                           {item.end.includes("%") ? item.end : `${item.end}+`}
                         </h4>
-                        <p className="text-sm text-[#565969] mt-2">{item.label}</p>
+                        <p className="text-[16px] text-[#565969]">{item.label}</p>
                       </div>
                     </div>
                   </div>
@@ -105,3 +105,4 @@ export default function CounterSection() {
     </section>
   );
 }
+

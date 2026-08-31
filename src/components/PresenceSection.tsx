@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PresenceSection() {
   return (
     <section className="tp-about-area relative fix bg-[#303030] pt-[60px] pb-[60px] lg:pt-[120px] lg:pb-[120px]">
-      <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+      <div className="container">
         <div className="row flex flex-wrap -mx-3 mb-8">
           <div className="w-full px-3">
             <div className="tp-team-6-title-wrapper">
@@ -23,7 +23,7 @@ export default function PresenceSection() {
                     src="https://standardarabia.com/assets/img/home/map.webp"
                     alt="Third-Party Inspection Company"
                     title="Third-Party Inspection Company"
-                    className="w-full h-auto object-contain max-w-[640px] mx-auto"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -46,7 +46,7 @@ export default function PresenceSection() {
               <div className="tp-about-btn mt-8">
                 <Link
                   href="/about"
-                  className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-7 py-3 text-sm font-semibold text-white hover:bg-white hover:text-[#0c598f] transition-colors"
+                  className="tp-btn bg-[#0c598f] text-white hover:bg-white hover:text-[#0c598f]"
                 >
                   Read More
                   <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">

@@ -69,7 +69,7 @@ export default function HeroSlider() {
                 }`}
                 style={{ minHeight: "500px" }}
               >
-                <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+                <div className="container">
                   <div className="row flex flex-wrap items-center -mx-3">
                     {/* Order switches per slide to match original sm-md-order classes */}
                     {s.layout === "text-left-image-right" ? (
@@ -85,7 +85,7 @@ export default function HeroSlider() {
                             <div className="tp-hero-7-wrapper flex flex-wrap items-center justify-center lg:justify-start gap-3">
                               <Link
                                 href={s.ctaPrimary.href}
-                                className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-7 py-3 text-sm font-semibold text-white hover:bg-[#09406a] transition-colors"
+                                className="tp-btn bg-[#0c598f] text-white hover:bg-[#09406a]"
                               >
                                 {s.ctaPrimary.label}
                                 <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -95,7 +95,7 @@ export default function HeroSlider() {
                               </Link>
                               <Link
                                 href={s.ctaSecondary.href}
-                                className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#525353] px-7 py-3 text-sm font-semibold text-white hover:bg-[#3f3f3f] transition-colors"
+                                className="tp-btn bg-[#525353] text-white hover:bg-[#3f3f3f]"
                               >
                                 {s.ctaSecondary.label}
                                 <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -109,7 +109,7 @@ export default function HeroSlider() {
                         <div className="w-full lg:w-1/2 px-3 order-2">
                           <div className={`tp-hero-7-thumb relative transition-all duration-700 ${i === active ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[100px]"} lg:ml-[-100px] xl:ml-[-160px]`}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={s.image} alt={s.title} className="w-full h-auto object-contain max-h-[420px]" />
+                            <img src={s.image} alt={s.title} width={640} height={450} className="h-auto max-w-none" />
                           </div>
                         </div>
                       </>
@@ -118,7 +118,7 @@ export default function HeroSlider() {
                         <div className="w-full lg:w-1/2 px-3 order-2 lg:order-1">
                           <div className={`tp-hero-7-thumb relative transition-all duration-700 ${i === active ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[100px]"} lg:ml-[-100px] xl:ml-[-160px]`}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={s.image} alt={s.title} className="w-full h-auto object-contain max-h-[420px]" />
+                            <img src={s.image} alt={s.title} width={640} height={450} className="h-auto max-w-none" />
                           </div>
                         </div>
                         <div className="w-full lg:w-1/2 px-3 order-1 lg:order-2">
@@ -132,7 +132,7 @@ export default function HeroSlider() {
                             <div className="tp-hero-7-wrapper flex flex-wrap items-center justify-center lg:justify-start gap-3">
                               <Link
                                 href={s.ctaPrimary.href}
-                                className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-7 py-3 text-sm font-semibold text-white hover:bg-[#09406a] transition-colors"
+                                className="tp-btn bg-[#0c598f] text-white hover:bg-[#09406a]"
                               >
                                 {s.ctaPrimary.label}
                                 <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -142,7 +142,7 @@ export default function HeroSlider() {
                               </Link>
                               <Link
                                 href={s.ctaSecondary.href}
-                                className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#525353] px-7 py-3 text-sm font-semibold text-white hover:bg-[#3f3f3f] transition-colors"
+                                className="tp-btn bg-[#525353] text-white hover:bg-[#3f3f3f]"
                               >
                                 {s.ctaSecondary.label}
                                 <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">

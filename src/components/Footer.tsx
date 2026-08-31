@@ -8,7 +8,7 @@ export default function Footer() {
         <img src="https://standardarabia.com/assets/img/bg/footer-bg-right.webp" alt="" className="absolute right-0 top-0 h-full w-auto object-cover opacity-20" />
       </div>
 
-      <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8 relative">
+      <div className="container relative">
         <div className="tp-footer-main border-b border-white/10 pb-10">
           <div className="row flex flex-wrap -mx-3">
             {/* col-1 */}
