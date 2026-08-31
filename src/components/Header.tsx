@@ -138,98 +138,143 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Offcanvas overlay + panel - replicates .offcanvas__area */}
+      {/* Offcanvas - 1:1 replica of original .offcanvas__area + .body-overlay */}
       {open && (
         <>
+          {/* body-overlay - fixed black 0.7 z 99 */}
           <div
-            className="fixed inset-0 z-[99] bg-black/40 backdrop-blur-sm"
+            className="body-overlay opened fixed inset-0 z-[99] bg-black opacity-70"
+            style={{ transition: "0.3s ease-out" }}
             onClick={() => setOpen(false)}
             aria-hidden
           />
-          <div className="fixed inset-y-0 right-0 z-[100] flex w-[86%] max-w-[380px] flex-col overflow-y-auto bg-white shadow-2xl">
-            {/* Close button - replicates .offcanvas__close */}
-            <div className="flex items-center justify-between border-b border-gray-100 px-6 py-5">
-              <Link href="/" onClick={() => setOpen(false)}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://standardarabia.com/assets/img/logo1.webp" alt="Standard Arabia" className="h-8 w-auto object-contain" />
-              </Link>
+          {/* offcanvas__area - fixed full viewport white, transform slide, z 999 */}
+          <div
+            className="offcanvas__area offcanvas-opened fixed inset-0 z-[999] overflow-y-auto bg-white"
+            style={{
+              transform: "translateX(0)",
+              transition: "all 0.4s ease-in-out",
+              scrollbarWidth: "none",
+            }}
+          >
+            {/* offcanvas__wrapper - padding 40 0 0 40 (original) */}
+            <div className="offcanvas__wrapper min-h-full pt-[40px] pl-[40px] max-[575px]:p-[30px]">
+              {/* offcanvas__close-btn - absolute top 10 right 40, 40x40 bg #0c598f */}
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-50 text-[#1F242C] hover:bg-gray-100"
+                className="offcanvas__close-btn offcanvas-close-btn absolute right-10 top-[10px] flex h-10 w-10 items-center justify-center bg-[#0c598f] leading-10 text-white transition-all hover:rotate-45 max-[575px]:right-[30px] max-[575px]:top-10"
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M11 1L1 11M1 1l11 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M1 1L11 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-            </div>
 
-            <nav className="flex-1 px-2 py-4">
-              {navLinks.map((link) =>
-                link.hasDropdown ? (
-                  <div key={link.label}>
+              <div className="offcanvas__content">
+                {/* Top spacer - 20px like original */}
+                <div className="offcanvas__top mb-[20px]" />
+
+                {/* tp-main-menu-mobile fix */}
+                <div className="tp-main-menu-mobile fix">
+                  <nav className="tp-main-menu-content flex">
+                    {/* main-nav - LEFT PANE: fixed 274px like original (fixed at 40,60) */}
+                    <ul className="main-nav block w-[274px] shrink-0 px-[30px] max-[767px]:w-[75%] max-[767px]:px-0 max-[575px]:w-full">
+                      {/* logo inside nav */}
+                      <div>
+                        <a href="/">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src="https://standardarabia.com/assets/img/logo.webp"
+                            width={150}
+                            alt="Standard Arabia Approved Training Center"
+                            className="h-auto w-[150px] object-contain"
+                          />
+                        </a>
+                      </div>
+                      {navLinks.map((link) => (
+                        <li
+                          key={link.label}
+                          className={`relative ${link.accent ? "ver-btn mt-5 bg-[#0c598f] text-center" : ""}`}
+                          style={{
+                            padding: link.accent ? "0 0 0 35px" : "0 0 0 35px",
+                            height: link.accent ? "60px" : "45px",
+                            lineHeight: link.accent ? "40px" : "24px",
+                          }}
+                        >
+                          <Link
+                            href={link.href}
+                            onClick={() => setOpen(false)}
+                            className={`block py-[10px] pr-5 text-[16px] transition-colors ${
+                              link.accent
+                                ? "font-semibold text-white text-center"
+                                : "font-normal text-[#17609c] hover:text-[#0c598f]"
+                            }`}
+                            style={{ fontFamily: link.accent ? '"Plus Jakarta Sans", sans-serif' : undefined }}
+                          >
+                            <span>{link.label}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* service-nav - RIGHT PANE: 3-col grid, hidden on <768 like original */}
+                    <div className="service-nav hidden flex-1 pl-10 md:block">
+                      <div className="tp-submenu submenu has-homemenu">
+                        <div className="grid grid-cols-2 gap-0 xl:grid-cols-3">
+                          {servicesMega.map((s) => (
+                            <div key={s.title} className="homemenu relative mb-5 px-[10px]">
+                              <div className="homemenu-thumb relative mb-3 overflow-hidden border border-[rgba(185,182,182,0.44)] shadow-[0_1px_2px_rgba(149,157,165,0.28)]">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={s.img} alt={s.title} className="w-full object-cover" />
+                                <div className="homemenu-btn absolute inset-0 flex -translate-y-1/2 flex-col items-center justify-center text-center opacity-100 visible" style={{ top: "50%" }}>
+                                  <a
+                                    href={s.href}
+                                    onClick={() => setOpen(false)}
+                                    className="menu-btn show-1 inline-block w-[250px] rounded-[11px] border border-white/70 bg-[#0C2C4E9E] p-[23px] text-center font-['Montserrat',sans-serif] text-[14px] font-semibold leading-[1.2] text-white"
+                                  >
+                                    {s.title}
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+
+                  {/* Mobile services (when service-nav hidden) - show as expandable list */}
+                  <div className="mt-4 lg:hidden">
                     <button
                       onClick={() => setServicesOpen(!servicesOpen)}
-                      className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#1F242C] hover:bg-gray-50"
+                      className="flex w-full items-center justify-between px-[30px] py-3 text-[16px] font-normal text-[#17609c]"
                     >
-                      {link.label}
-                      <svg
-                        className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                        fill="none"
-                        viewBox="0 0 12 12"
-                      >
+                      Services
+                      <svg className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 12 12">
                         <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </button>
                     {servicesOpen && (
-                      <div className="mx-2 mb-2 grid grid-cols-1 gap-2 rounded-xl bg-gray-50 p-3">
+                      <div className="grid grid-cols-1 gap-3 px-[30px] pb-4">
                         {servicesMega.map((s) => (
                           <Link
                             key={s.title}
                             href={s.href}
                             onClick={() => setOpen(false)}
-                            className="flex items-center gap-3 rounded-lg bg-white p-2 hover:bg-white hover:shadow-sm"
+                            className="flex items-center gap-3 rounded-lg border border-gray-100 p-2"
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={s.img} alt={s.title} className="h-10 w-14 rounded object-cover bg-gray-50" />
-                            <span className="text-xs font-semibold leading-tight text-[#1F242C]">{s.title}</span>
+                            <img src={s.img} alt={s.title} className="h-12 w-16 rounded object-cover" />
+                            <span className="text-sm font-semibold text-[#1F242C]">{s.title}</span>
                           </Link>
                         ))}
                       </div>
                     )}
                   </div>
-                ) : (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
-                      link.accent ? "text-[#ff0000] hover:bg-red-50" : "text-[#1F242C] hover:bg-gray-50"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
-
-              {/* Contact / Verification inside drawer for mobile - matches original offcanvas extra buttons */}
-              <div className="mt-6 flex gap-3 px-4">
-                <Link
-                  href="/contact"
-                  onClick={() => setOpen(false)}
-                  className="flex flex-1 items-center justify-center rounded-full bg-[#0c598f] py-3 text-sm font-semibold text-white hover:bg-[#09406a]"
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/verification"
-                  onClick={() => setOpen(false)}
-                  className="flex flex-1 items-center justify-center rounded-full border border-[#ff0000] py-3 text-sm font-semibold text-[#ff0000] hover:bg-red-50"
-                >
-                  Verification
-                </Link>
+                </div>
               </div>
-            </nav>
+            </div>
           </div>
         </>
       )}
