@@ -1,127 +1,89 @@
 import Link from "next/link";
 
 const services = [
-  {
-    title: "Third Party Inspection",
-    href: "/third-party-inspection",
-    img: "https://standardarabia.com/assets/img/home/services/third-party-inspection.webp",
-    desc: "Comprehensive third-party verification",
-  },
-  {
-    title: "Lifting Equipment Inspection",
-    href: "/lifting-equipment-inspection",
-    img: "https://standardarabia.com/assets/img/home/services/lifting-equipment-inspection.webp",
-    desc: "Certified lifting gear inspection",
-  },
-  {
-    title: "Safety Training Services",
-    href: "/safety-training",
-    img: "https://standardarabia.com/assets/img/home/services/safety-training.webp",
-    desc: "International safety programs",
-  },
-  {
-    title: "Operator Training & Assessment",
-    href: "/operator-training",
-    img: "https://standardarabia.com/assets/img/home/services/Operator-Certification-Program.webp",
-    desc: "Competency-based operator certification",
-  },
-  {
-    title: "Advanced & Conventional NDT",
-    href: "/advanced-conventional",
-    img: "https://standardarabia.com/assets/img/home/services/advanced-conventional-ndt.webp",
-    desc: "State-of-the-art testing solutions",
-  },
-  {
-    title: "Marine Inspection Services",
-    href: "/marine-testing",
-    img: "https://standardarabia.com/assets/img/home/services/marine-inspection-services.webp",
-    desc: "Marine survey & cargo inspection",
-  },
-  {
-    title: "Calibration & Repair Services",
-    href: "/calibration",
-    img: "https://standardarabia.com/assets/img/home/services/calibration.webp",
-    desc: "Precision calibration solutions",
-  },
-  {
-    title: "Material Testing Laboratory",
-    href: "/material-testing",
-    img: "https://standardarabia.com/assets/img/home/services/material-testing-laboratory.webp",
-    desc: "Accredited material analysis",
-  },
+  { title: "Third Party Inspection", href: "/third-party-inspection", img: "https://standardarabia.com/assets/img/home/services/third-party-inspection.webp", variant: "serv" },
+  { title: "Lifting Equipment Inspection", href: "/lifting-equipment-inspection", img: "https://standardarabia.com/assets/img/home/services/lifting-equipment-inspection.webp", variant: "serv-gray" },
+  { title: "Safety Training Services", href: "/safety-training", img: "https://standardarabia.com/assets/img/home/services/safety-training.webp", variant: "serv" },
+  { title: "Operator Training & Assessment", href: "/operator-training", img: "https://standardarabia.com/assets/img/home/services/Operator-Certification-Program.webp", variant: "serv-gray" },
+  { title: "Advanced & Conventional NDT", href: "/advanced-conventional", img: "https://standardarabia.com/assets/img/home/services/advanced-conventional-ndt.webp", variant: "serv" },
+  { title: "Marine Inspection Services", href: "/marine-testing", img: "https://standardarabia.com/assets/img/home/services/marine-inspection-services.webp", variant: "serv-gray" },
+  { title: "Calibration & Repair Services", href: "/calibration", img: "https://standardarabia.com/assets/img/home/services/calibration.webp", variant: "serv" },
+  { title: "Material Testing Laboratory", href: "/material-testing", img: "https://standardarabia.com/assets/img/home/services/material-testing-laboratory.webp", variant: "serv-gray" },
 ];
 
 export default function OfferSection() {
   return (
-    <section className="relative bg-white py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0c598f]/10 bg-[#f0f7ff] px-4 py-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#0c598f] animate-pulse" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#0c598f]">What We Offer</span>
-          </div>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#1F242C] sm:text-4xl">
-            We offer quality service
-            <br />
-            <span className="text-[#0c598f]">for our clients</span>
-          </h2>
-          <div className="mx-auto mt-6 h-1 w-12 rounded-full bg-[#0c598f]" />
-        </div>
-
-        {/* Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-          {services.map((s) => (
-            <Link
-              key={s.title}
-              href={s.href}
-              className="group relative flex flex-col overflow-hidden rounded-[20px] border border-gray-100 bg-white shadow-sm hover:shadow-xl hover:border-[#0c598f]/10 hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                  <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#0c598f] shadow-sm backdrop-blur">
-                    Explore →
-                  </span>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0c598f] text-white shadow-lg group-hover:bg-[#09406a] transition-colors">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M7 17L17 7M17 7H7m10 0v10" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div className="p-5">
-                <h3 className="text-[15px] font-bold leading-tight text-[#1F242C] group-hover:text-[#0c598f] transition-colors line-clamp-2">
-                  {s.title}
-                </h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-[#565969] line-clamp-2">{s.desc}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0c598f]/20 hover:bg-[#09406a] hover:shadow-xl transition-all"
-          >
-            View All Services
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
+    <section className="tp-team-2-area relative fix z-[1] bg-[#f6f6f6] pt-[80px] pb-[80px] lg:pt-[120px] lg:pb-[120px]">
+      <div className="tp-offer-shape pointer-events-none absolute right-0 top-10 hidden lg:block opacity-60">
+        <img src="https://standardarabia.com/assets/img/offer/offer-1-shape.webp" alt="" className="h-40 w-auto" />
       </div>
 
-      {/* decorative shape */}
-      <div className="pointer-events-none absolute right-0 top-20 hidden opacity-40 lg:block">
-        <img src="https://standardarabia.com/assets/img/offer/offer-1-shape.webp" alt="" className="h-40 w-auto" />
+      <div className="container mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+        <div className="row flex flex-wrap -mx-3">
+          <div className="w-full lg:w-2/3 px-3">
+            <div className="tp-offer-title-wrapper mb-[40px] lg:mb-[75px]">
+              <span className="tp-section-title-pre-2 text-sm font-semibold tracking-widest text-[#0c598f] uppercase">WHAT WE OFFER</span>
+              <h3 className="tp-section-title text-[32px] lg:text-[55px] font-bold leading-[1.1] text-[#0c598f] mt-2" style={{ fontFamily: "var(--font-jakarta)" }}>
+                We offer quality service <br className="hidden lg:block" /> for our clients
+              </h3>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/3 px-3 hidden lg:block" />
+        </div>
+
+        <div className="container mx-auto px-0">
+          <div className="row flex flex-wrap -mx-3">
+            {services.map((s) => (
+              <div key={s.title} className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                <div
+                  className={`tp-offer-item group relative overflow-hidden p-0 transition-all duration-300 ${
+                    s.variant === "serv" ? "bg-[#0c598f]" : "bg-[#525353]"
+                  } hover:bg-white border border-transparent hover:border-gray-100`}
+                  style={{ borderRadius: "22px 2px 68px 2px" }}
+                >
+                  <div className="tp-offer-content px-6 pt-6 pb-4">
+                    <div className="tp-offer-button flex items-center justify-between">
+                      <h4 className="tp-offer-title text-[15px] font-bold leading-[1.5] uppercase text-white group-hover:text-[#0c598f] transition-colors">
+                        <Link href={s.href} className="hover:underline decoration-white/30 group-hover:decoration-[#0c598f]/30">
+                          {s.title}
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                  <div className="tp-offer-item-thumb relative overflow-hidden mx-3 mb-3">
+                    <Link href={s.href} className="block">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={s.img}
+                        alt={s.title}
+                        className="w-full h-[180px] object-cover transition-transform duration-700 group-hover:scale-110"
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </Link>
+                  </div>
+                  {/* hover content overlay like original .serv .tp-offer-content bg switch */}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="row flex flex-wrap -mx-3 mt-2">
+            <div className="w-full px-3">
+              <div className="ser-btn flex justify-center lg:justify-start">
+                <Link
+                  href="/services"
+                  className="tp-btn inline-flex items-center gap-2 rounded-full bg-[#0c598f] px-8 py-3 text-sm font-semibold text-white hover:bg-[#09406a] transition-colors"
+                >
+                  View All
+                  <svg width="14" height="14" viewBox="0 0 14.2 14.2" fill="none" stroke="currentColor" strokeWidth="1.2">
+                    <path d="M13.2 9V1h-8M13.4.8.7 13.5" />
+                    <path d="M13.2 9V1h-8M13.4.8.7 13.5" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -88,99 +88,110 @@ export default function Header() {
         <div className="border-b border-gray-100/80">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="flex h-[72px] items-center justify-between gap-4">
-              {/* Left: Logo */}
+              {/* Left: Logo - carbon copy using actual assets */}
               <Link href="/" className="flex items-center gap-3 shrink-0">
-                {/* Arabic + English logo replica */}
-                <div className="flex flex-col leading-none">
-                  <span className="text-[11px] sm:text-[13px] font-bold tracking-wide text-[#0c598f]" style={{ fontFamily: "var(--font-jakarta)" }}>
-                    شركة معيار العربية للفحص
-                  </span>
-                  <span className="text-[11px] sm:text-xs font-semibold text-[#0c598f] flex items-center gap-1.5">
-                    Standard Arabia
-                    <span className="font-normal text-[#525353] hidden sm:inline">
-                      Inspection Co Ltd.
-                    </span>
-                  </span>
-                  <span className="text-[10px] text-[#525353] sm:hidden">Inspection Co Ltd.</span>
-                </div>
-                <div className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full bg-[#0c598f] text-white">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M14.5 17.5L19 22l-1.5 1.5L14.5 17.5z" />
-                    <circle cx="11" cy="11" r="6" />
-                    <path d="M11 8a3 3 0 100 6 3 3 0 000-6z" />
-                  </svg>
-                </div>
+                <img
+                  src="https://standardarabia.com/assets/img/logo1.webp"
+                  alt="Standard Arabia modern Inspection and training solutions"
+                  className="h-9 sm:h-10 w-auto object-contain"
+                />
+                <img
+                  src="https://standardarabia.com/assets/img/logo.webp"
+                  alt="Standard Arabia, Saudi Arabia Approved Training Center"
+                  className="hidden lg:block h-10 w-auto object-contain"
+                />
               </Link>
 
-              {/* Center: Vision 2030 + Desktop Nav */}
-              <div className="hidden items-center gap-6 lg:flex">
-                <img
-                  src="https://standardarabia.com/assets/img/Saudi_Vision_2030.webp"
-                  alt="Saudi Vision 2030"
-                  className="h-10 w-auto object-contain"
-                />
-                <nav className="flex items-center gap-1">
-                  {navLinks.map((link) =>
-                    link.hasDropdown ? (
-                      <div key={link.label} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+              {/* Center: Desktop Nav - carbon copy matches original <ul class="main-nav"> with logo.webp 150px as first item */}
+              <div className="hidden items-center gap-2 lg:flex">
+                <nav className="flex items-center">
+                  <Link href="/" className="mr-1">
+                    <img
+                      src="https://standardarabia.com/assets/img/logo.webp"
+                      alt="Standard Arabia Approved Training Center"
+                      width={150}
+                      className="h-10 w-[150px] object-contain hidden xl:block"
+                    />
+                  </Link>
+                  <div className="flex items-center gap-0">
+                    {navLinks.map((link) =>
+                      link.hasDropdown ? (
+                        <div
+                          key={link.label}
+                          className="relative"
+                          onMouseEnter={() => setServicesOpen(true)}
+                          onMouseLeave={() => setServicesOpen(false)}
+                        >
+                          <Link
+                            href={link.href}
+                            className="flex items-center gap-1 px-2.5 py-2 text-[13px] font-medium text-[#1F242C] hover:text-[#0c598f] transition-colors whitespace-nowrap"
+                          >
+                            {link.label}
+                            <svg className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 12 12">
+                              <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </Link>
+                          {servicesOpen && (
+                            <div className="absolute left-1/2 top-full z-50 mt-2 w-[860px] -translate-x-1/2 rounded-[22px] border border-gray-100 bg-white p-6 shadow-2xl" style={{ borderRadius: "22px 2px 68px 2px" }}>
+                              <div className="grid grid-cols-3 gap-4">
+                                {servicesMega.map((s) => (
+                                  <Link
+                                    key={s.title}
+                                    href={s.href}
+                                    className="group relative overflow-hidden rounded-xl border border-gray-100 bg-white p-3 hover:border-[#0c598f]/20 hover:bg-[#f8fafc] transition-all"
+                                  >
+                                    <div className="aspect-[16/10] overflow-hidden rounded-lg bg-gray-50 mb-2">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img src={s.img} alt={s.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    </div>
+                                    <p className="text-xs font-semibold leading-tight text-[#1F242C] group-hover:text-[#0c598f] line-clamp-2">{s.title}</p>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ) : (
                         <Link
+                          key={link.label}
                           href={link.href}
-                          className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#1F242C] hover:text-[#0c598f] transition-colors"
+                          className={`px-2.5 py-2 text-[13px] font-medium transition-colors whitespace-nowrap ${
+                            link.accent ? "text-[#eb003d] hover:text-[#c20032]" : "text-[#1F242C] hover:text-[#0c598f]"
+                          }`}
                         >
                           {link.label}
-                          <svg className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 12 12">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
                         </Link>
-                        {/* Mega dropdown */}
-                        {servicesOpen && (
-                          <div className="absolute left-1/2 top-full z-50 mt-2 w-[860px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-6 shadow-2xl">
-                            <div className="grid grid-cols-4 gap-4">
-                              {servicesMega.map((s) => (
-                                <Link
-                                  key={s.title}
-                                  href={s.href}
-                                  className="group rounded-xl border border-gray-100 p-3 hover:border-[#0c598f]/20 hover:bg-[#f8fafc] transition-all"
-                                >
-                                  <div className="aspect-[4/3] overflow-hidden rounded-lg bg-gray-50 mb-3">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img src={s.img} alt={s.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                                  </div>
-                                  <p className="text-xs font-semibold leading-tight text-[#1F242C] group-hover:text-[#0c598f]">{s.title}</p>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        key={link.label}
-                        href={link.href}
-                        className={`px-3 py-2 text-sm font-medium transition-colors ${
-                          link.accent ? "text-[#eb003d] hover:text-[#c20032]" : "text-[#1F242C] hover:text-[#0c598f]"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    )
-                  )}
+                      )
+                    )}
+                  </div>
                 </nav>
               </div>
 
-              {/* Right: CTA + actions */}
-              <div className="flex items-center gap-2 sm:gap-4">
-                <div className="hidden items-center gap-4 sm:flex">
-                  <Link href="/contact" className="text-sm font-semibold text-[#1F242C] hover:text-[#0c598f] transition-colors">
+              {/* Right: CTA + actions - carbon copy */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                <img
+                  src="https://standardarabia.com/assets/img/Saudi_Vision_2030.webp"
+                  alt="Saudi Vision 2030"
+                  className="hidden md:block h-9 w-auto object-contain"
+                />
+                <div className="hidden items-center gap-3 lg:flex">
+                  <Link
+                    href="/contact"
+                    className="hidden md:inline-flex items-center justify-center rounded-full bg-[#0c598f] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#09406a] transition-colors shadow-sm"
+                  >
                     Contact Us
                   </Link>
-                  <Link href="/verification" className="text-sm font-semibold text-[#eb003d] hover:text-[#c20032] transition-colors">
+                  <Link
+                    href="/verification"
+                    className="hidden md:inline-flex items-center justify-center rounded-full border border-[#0c598f] bg-white px-5 py-2.5 text-sm font-semibold text-[#0c598f] hover:bg-[#f0f7ff] transition-colors"
+                  >
                     Verification
                   </Link>
                 </div>
 
-                {/* Icons */}
-                <div className="hidden items-center gap-2 text-[#1F242C] sm:flex">
+                {/* Header icons - original has Vision + Contact + Verification + hamburger with bradcrumb.svg */}
+                <div className="hidden items-center gap-2 text-[#1F242C] md:flex">
+                  <span className="text-gray-300">|</span>
                   <button aria-label="Search" className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-gray-50 transition-colors">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                       <circle cx="11" cy="11" r="7" />
@@ -197,21 +208,27 @@ export default function Header() {
                   </button>
                 </div>
 
-                {/* Hamburger */}
+                {/* Hamburger - carbon: uses bradcrumb.svg on desktop */}
                 <button
                   onClick={() => setMobileOpen(!mobileOpen)}
                   aria-label="Toggle menu"
-                  className="flex h-10 w-10 items-center justify-center rounded-full text-[#0c598f] hover:bg-gray-50 lg:hidden"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-50 lg:hidden"
                 >
                   {mobileOpen ? (
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M18 6L6 18M6 6l12 12" />
                     </svg>
                   ) : (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 6h16M8 12h12M4 18h16" />
-                    </svg>
+                    <img src="https://standardarabia.com/assets/img/icon/bradcrumb.svg" alt="menu" className="h-5 w-5 object-contain" />
                   )}
+                </button>
+                {/* Desktop hamburger visible like original offcanvas-open-btn */}
+                <button
+                  onClick={() => setMobileOpen(!mobileOpen)}
+                  aria-label="Toggle menu"
+                  className="hidden lg:flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-50"
+                >
+                  <img src="https://standardarabia.com/assets/img/icon/bradcrumb.svg" alt="menu" className="h-5 w-5 object-contain" />
                 </button>
               </div>
             </div>
