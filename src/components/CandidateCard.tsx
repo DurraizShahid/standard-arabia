@@ -86,7 +86,7 @@ export function CandidateCard({
 
         {/* Card No */}
         <div className="text-right pt-1">
-          <span className="text-[15px] sm:text-[17px] font-bold tracking-wide text-black whitespace-nowrap" style={{ fontFamily: "Arial, sans-serif" }}>
+          <span className="text-[21px] font-bold tracking-wide text-black whitespace-nowrap" style={{ fontFamily: "Arial, sans-serif" }}>
             CARD NO : {cardNo}
           </span>
         </div>
