@@ -274,16 +274,16 @@ export function CandidateCard({
         {/* z20: FOOTER y708-758 centered x664 */}
         <div
           className="absolute left-0 text-center"
-          style={{ top: 700, width: MASTER_W, height: 62, zIndex: 20, lineHeight: "24px" }}
+          style={{ top: 698, width: MASTER_W, height: 68, zIndex: 20, lineHeight: "28px" }}
         >
           <p
             style={{
               fontFamily: "'Arial Narrow', 'Roboto Condensed', 'Helvetica Condensed', Arial, sans-serif",
-              fontSize: 22,
+              fontSize: 26,
               fontWeight: 700,
               letterSpacing: "0.05em",
               color: "#0e5a8a",
-              lineHeight: "24px",
+              lineHeight: "28px",
             }}
           >
             THIS CARD WILL BE INVALID WITHOUT HOLOGRAM.
@@ -291,11 +291,11 @@ export function CandidateCard({
           <p
             style={{
               fontFamily: "'Arial Narrow', 'Roboto Condensed', 'Helvetica Condensed', Arial, sans-serif",
-              fontSize: 22,
+              fontSize: 26,
               fontWeight: 700,
               letterSpacing: "0.05em",
               color: "#0e5a8a",
-              lineHeight: "24px",
+              lineHeight: "28px",
             }}
           >
             FOR VERIFICATION, PLEASE SCAN QR CODE OR VISIT OUR WEBSITE
