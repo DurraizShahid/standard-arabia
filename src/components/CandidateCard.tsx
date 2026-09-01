@@ -145,12 +145,12 @@ export function CandidateCard({
           {/* Logo group: x48 y50 right530 bottom177 => w482 h127 */}
           <div className="absolute" style={{ left: 48, top: 50, width: 482, height: 127, zIndex: 20 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo-f.png"
-              alt="Standard Arabia"
-              style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "left center" }}
-              draggable={false}
-            />
+          <img
+            src="/logo-f.png"
+            alt="Standard Arabia"
+            className="h-[84px] sm:h-[102px] w-auto object-contain"
+            draggable={false}
+          />
           </div>
 
           {/* Card No: upper-right, large black condensed */}
