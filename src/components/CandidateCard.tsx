@@ -278,10 +278,10 @@ export function CandidateCard({
         >
           <p
             style={{
-              fontFamily: "'Arial Narrow', 'Roboto Condensed', 'Helvetica Condensed', Arial, sans-serif",
+              fontFamily: '"Times New Roman", Times, serif',
               fontSize: 26,
               fontWeight: 700,
-              letterSpacing: "0.05em",
+              letterSpacing: "0.02em",
               color: "#0C2F54",
               lineHeight: "28px",
             }}
@@ -290,10 +290,10 @@ export function CandidateCard({
           </p>
           <p
             style={{
-              fontFamily: "'Arial Narrow', 'Roboto Condensed', 'Helvetica Condensed', Arial, sans-serif",
+              fontFamily: '"Times New Roman", Times, serif',
               fontSize: 26,
               fontWeight: 700,
-              letterSpacing: "0.05em",
+              letterSpacing: "0.02em",
               color: "#0C2F54",
               lineHeight: "28px",
             }}
