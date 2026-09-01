@@ -81,21 +81,25 @@ export function CandidateCardBack({ isDemo = true }: CandidateCardBackProps) {
           />
         </div>
 
-        {/* Back content placeholder - awaiting instructions */}
+        {/* Back content - disclaimer right below separator */}
         <div
-          className="absolute left-0 flex items-center justify-center"
-          style={{ top: 320, width: MASTER_W, height: 200, zIndex: 20 }}
+          className="absolute"
+          style={{ left: 28, right: 28, top: 210, zIndex: 20 }}
         >
           <p
             style={{
-              fontFamily: "'Arial Narrow', 'Roboto Condensed', sans-serif",
-              fontSize: 28,
-              fontWeight: 600,
-              color: "#0C2F54",
-              letterSpacing: "0.08em",
+              fontFamily: '"Times New Roman", Times, serif',
+              fontSize: 17,
+              fontWeight: 400,
+              color: "#000",
+              lineHeight: "22px",
+              letterSpacing: "0.01em",
+              textAlign: "justify",
+              textJustify: "inter-word",
+              hyphens: "auto",
             }}
           >
-            BACK SIDE — AWAITING INSTRUCTIONS
+            This is not a Saudi Government License ID. It is valid only for equipment or training stated. This card certifies that the candidate has satisfactorily attended the course and authorized to practice the profession specified on the front of this card. This card does not release the operator from his duty with regards to the safe operation of the listed equipment. Use of this card by any person other than its recipient will be considered forgery and will be punishable by Law. Any liability occurring due to errors of judgement or negligence committed by the bearer of this card will not be the responsibility of the issuing agency.
           </p>
         </div>
 
