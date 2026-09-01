@@ -121,10 +121,10 @@ export function CandidateCard({
           { label: "VALID UNTIL", value: formatDDMMYYYY(expiryDate) },
         ].map((row) => (
           <div key={row.label} className="flex gap-[6px] leading-none">
-            <span className="text-[17px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+            <span className="text-[19px] font-bold text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 700 }}>
               {row.label} :
             </span>
-            <span className="text-[17px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+            <span className="text-[19px] font-bold text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 700 }}>
               {row.value}
             </span>
           </div>
