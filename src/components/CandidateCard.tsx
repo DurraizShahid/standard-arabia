@@ -44,10 +44,10 @@ export function CandidateCard({
       className="relative w-full max-w-[860px] aspect-[1.58] overflow-hidden bg-white select-none"
       style={{ fontFamily: "var(--font-jakarta), Arial, sans-serif" }}
     >
-      {/* Background wave */}
+      {/* Background wave - now PNG as updated */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/background.jpeg"
+        src="/background.png"
         alt=""
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
         draggable={false}
@@ -79,7 +79,7 @@ export function CandidateCard({
           <img
             src="/logo-f.png"
             alt="Standard Arabia"
-            className="h-[68px] sm:h-[84px] w-auto object-contain"
+            className="h-[76px] sm:h-[92px] w-auto object-contain"
             draggable={false}
           />
         </div>
@@ -95,8 +95,8 @@ export function CandidateCard({
       {/* Blue divider line */}
       <div className="absolute top-[18.2%] left-[2.2%] right-[2.2%] h-[3px] bg-[#0e4a82] rounded-[1px]" />
 
-      {/* Photo - flush white, no shadow like original */}
-      <div className="absolute left-[3.2%] top-[23.8%] w-[21.8%] h-[52.8%] bg-white overflow-hidden">
+      {/* Photo - flush white, no shadow like original - scaled up */}
+      <div className="absolute left-[3.5%] top-[24%] w-[23.5%] h-[55%] bg-white overflow-hidden">
         {displayPhoto ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -110,8 +110,8 @@ export function CandidateCard({
         )}
       </div>
 
-      {/* Text fields block - match original size and spacing */}
-      <div className="absolute left-[27.9%] top-[25.5%] right-[18.8%] space-y-[7px]">
+      {/* Text fields block - scaled up to match original */}
+      <div className="absolute left-[29%] top-[26%] right-[17%] space-y-[8px]">
         {[
           { label: "NAME", value: name.toUpperCase() },
           { label: "IQAMA/ID NO", value: iqamaNo },
@@ -120,19 +120,19 @@ export function CandidateCard({
           { label: "ISSUED ON", value: formatDDMMYYYY(issuedDate) },
           { label: "VALID UNTIL", value: formatDDMMYYYY(expiryDate) },
         ].map((row) => (
-          <div key={row.label} className="flex gap-[6px] leading-none">
-            <span className="text-[15px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+          <div key={row.label} className="flex gap-[7px] leading-none">
+            <span className="text-[16.5px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
               {row.label} :
             </span>
-            <span className="text-[15px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+            <span className="text-[16.5px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
               {row.value}
             </span>
           </div>
         ))}
       </div>
 
-      {/* QR Code */}
-      <div className="absolute right-[3.4%] bottom-[15.5%] w-[15.2%] aspect-square bg-white p-[4px] border border-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] flex items-center justify-center">
+      {/* QR Code - scaled up */}
+      <div className="absolute right-[3%] bottom-[14%] w-[16.5%] aspect-square bg-white p-[4px] border border-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] flex items-center justify-center">
         <QRCodeSVG
           value={verificationUrl}
           size={128}
