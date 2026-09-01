@@ -32,8 +32,8 @@ export function CandidateCard({
 }: CandidateCardProps) {
   const verificationUrl =
     typeof window !== "undefined"
-      ? `${window.location.origin}/verification?q=${encodeURIComponent(cardNo)}`
-      : `https://standardarabia.com/verification?q=${encodeURIComponent(cardNo)}`;
+      ? `${window.location.origin}/verification?q=${encodeURIComponent(iqamaNo)}`
+      : `https://standardarabia.com/verification?q=${encodeURIComponent(iqamaNo)}`;
 
   const displayModel = modelLevel && modelLevel.trim() ? modelLevel.trim() : "N/A";
   const displayPhoto = photo || "";
