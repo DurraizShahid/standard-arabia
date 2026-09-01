@@ -81,7 +81,7 @@ export function CandidateCardBack({ isDemo = true }: CandidateCardBackProps) {
           />
         </div>
 
-        {/* Back content - disclaimer right below separator */}
+        {/* Back content - disclaimer right below separator - 26px as requested */}
         <div
           className="absolute"
           style={{ left: 28, right: 28, top: 210, zIndex: 20 }}
@@ -89,10 +89,10 @@ export function CandidateCardBack({ isDemo = true }: CandidateCardBackProps) {
           <p
             style={{
               fontFamily: '"Times New Roman", Times, serif',
-              fontSize: 17,
+              fontSize: 26,
               fontWeight: 400,
               color: "#000",
-              lineHeight: "22px",
+              lineHeight: "32px",
               letterSpacing: "0.01em",
               textAlign: "justify",
               textJustify: "inter-word",
