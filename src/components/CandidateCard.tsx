@@ -286,7 +286,7 @@ export function CandidateCard({
               lineHeight: "16px",
             }}
           >
-            SAMPLE CARD — NOT VALID FOR VERIFICATION
+            THIS CARD WILL BE INVALID WITHOUT HOLOGRAM.
           </p>
           <p
             style={{
@@ -298,7 +298,7 @@ export function CandidateCard({
               lineHeight: "16px",
             }}
           >
-            DEMONSTRATION UI ONLY
+            FOR VERIFICATION, PLEASE SCAN QR CODE OR VISIT OUR WEBSITE
           </p>
         </div>
       </div>
