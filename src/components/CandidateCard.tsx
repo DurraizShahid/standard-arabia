@@ -142,15 +142,20 @@ export function CandidateCard({
 
         {/* z20: HEADER */}
         <div className="absolute left-0 top-0" style={{ width: MASTER_W, height: 194, zIndex: 20 }}>
-          {/* Logo group: x48 y50 right530 bottom177 => w482 h127 */}
-          <div className="absolute" style={{ left: 48, top: 50, width: 482, height: 127, zIndex: 20 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo-f.png"
-            alt="Standard Arabia"
-            className="h-[84px] sm:h-[102px] w-auto object-contain"
-            draggable={false}
-          />
+          {/* Top left: www.standardarabia.com in #AEC6E0 */}
+          <div className="absolute flex items-center" style={{ left: 48, top: 50, width: 482, height: 127, zIndex: 20 }}>
+            <span
+              style={{
+                fontFamily: "Arial, Helvetica, sans-serif",
+                fontSize: 32,
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+                color: "#AEC6E0",
+                lineHeight: "32px",
+              }}
+            >
+              www.standardarabia.com
+            </span>
           </div>
 
           {/* Card No: upper-right, large black condensed */}

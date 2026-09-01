@@ -59,16 +59,21 @@ export function CandidateCardBack({ isDemo = true }: CandidateCardBackProps) {
           draggable={false}
         />
 
-        {/* z20: header with divider - same as front for visual consistency */}
+        {/* z20: header with divider - www.standardarabia.com in #AEC6E0 */}
         <div className="absolute left-0 top-0" style={{ width: MASTER_W, height: 194, zIndex: 20 }}>
-          <div className="absolute" style={{ left: 48, top: 50, width: 482, height: 127, zIndex: 20 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo-f.png"
-              alt="Standard Arabia"
-              style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "left center" }}
-              draggable={false}
-            />
+          <div className="absolute flex items-center" style={{ left: 48, top: 50, width: 482, height: 127, zIndex: 20 }}>
+            <span
+              style={{
+                fontFamily: "Arial, Helvetica, sans-serif",
+                fontSize: 32,
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+                color: "#AEC6E0",
+                lineHeight: "32px",
+              }}
+            >
+              www.standardarabia.com
+            </span>
           </div>
           <div
             className="absolute bg-[#0e4a82]"
