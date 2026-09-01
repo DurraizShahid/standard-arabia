@@ -41,7 +41,7 @@ export function CandidateCard({
   return (
     <div
       id="candidate-card-capture"
-      className="relative w-full max-w-[860px] aspect-[1.58] overflow-hidden bg-white border-[2px] border-[#0e4a82] rounded-[6px] select-none"
+      className="relative w-full max-w-[860px] aspect-[1.58] overflow-hidden bg-white select-none"
       style={{ fontFamily: "var(--font-jakarta), Arial, sans-serif" }}
     >
       {/* Background wave */}
@@ -95,8 +95,8 @@ export function CandidateCard({
       {/* Blue divider line */}
       <div className="absolute top-[18.2%] left-[2.2%] right-[2.2%] h-[3px] bg-[#0e4a82] rounded-[1px]" />
 
-      {/* Photo - no border like reference, flush white */}
-      <div className="absolute left-[3.2%] top-[23.8%] w-[21.8%] h-[52.8%] bg-white overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.10)]">
+      {/* Photo - flush white, no shadow like original */}
+      <div className="absolute left-[3.2%] top-[23.8%] w-[21.8%] h-[52.8%] bg-white overflow-hidden">
         {displayPhoto ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -106,12 +106,12 @@ export function CandidateCard({
             draggable={false}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-[#eef2f7] text-[#6b7280] text-[11px] font-semibold">NO PHOTO</div>
+          <div className="flex h-full w-full items-center justify-center bg-white text-[#9ca3af] text-[11px] font-semibold">NO PHOTO</div>
         )}
       </div>
 
-      {/* Text fields block - bolder, slightly larger to match reference */}
-      <div className="absolute left-[27.9%] top-[26.2%] right-[18.8%] space-y-[6px]">
+      {/* Text fields block - match original size and spacing */}
+      <div className="absolute left-[27.9%] top-[25.5%] right-[18.8%] space-y-[7px]">
         {[
           { label: "NAME", value: name.toUpperCase() },
           { label: "IQAMA/ID NO", value: iqamaNo },
@@ -120,11 +120,11 @@ export function CandidateCard({
           { label: "ISSUED ON", value: formatDDMMYYYY(issuedDate) },
           { label: "VALID UNTIL", value: formatDDMMYYYY(expiryDate) },
         ].map((row) => (
-          <div key={row.label} className="flex gap-[5px] leading-none">
-            <span className="text-[13.5px] sm:text-[15.5px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+          <div key={row.label} className="flex gap-[6px] leading-none">
+            <span className="text-[15px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
               {row.label} :
             </span>
-            <span className="text-[13.5px] sm:text-[15.5px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+            <span className="text-[15px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
               {row.value}
             </span>
           </div>
