@@ -41,7 +41,7 @@ export function CandidateCard({
   return (
     <div
       id="candidate-card-capture"
-      className="relative w-full max-w-[860px] aspect-[1.58] overflow-hidden bg-white select-none"
+      className="relative w-full max-w-[860px] aspect-[16/9] overflow-hidden bg-white select-none"
       style={{ fontFamily: "var(--font-jakarta), Arial, sans-serif" }}
     >
       {/* Background wave - now PNG as updated */}
