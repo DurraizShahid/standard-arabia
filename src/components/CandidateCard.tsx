@@ -72,7 +72,7 @@ export function CandidateCard({
       </div>
 
       {/* Header */}
-      <div className="absolute top-[3.5%] left-[2.5%] right-[2.5%] flex items-start justify-between">
+      <div className="absolute top-[3.5%] left-[2.2%] right-[2.2%] flex items-start justify-between">
         {/* Logo - using public/logo-f.png as requested */}
         <div className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
