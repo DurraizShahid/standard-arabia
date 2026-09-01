@@ -282,7 +282,7 @@ export function CandidateCard({
               fontSize: 26,
               fontWeight: 700,
               letterSpacing: "0.05em",
-              color: "#0e5a8a",
+              color: "#0C2F54",
               lineHeight: "28px",
             }}
           >
@@ -294,7 +294,7 @@ export function CandidateCard({
               fontSize: 26,
               fontWeight: 700,
               letterSpacing: "0.05em",
-              color: "#0e5a8a",
+              color: "#0C2F54",
               lineHeight: "28px",
             }}
           >
