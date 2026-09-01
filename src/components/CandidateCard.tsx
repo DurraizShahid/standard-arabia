@@ -95,8 +95,8 @@ export function CandidateCard({
       {/* Blue divider line */}
       <div className="absolute top-[18.2%] left-[2.2%] right-[2.2%] h-[3px] bg-[#0e4a82] rounded-[1px]" />
 
-      {/* Photo - flush white, no shadow like original - scaled up */}
-      <div className="absolute left-[3.5%] top-[24%] w-[23.5%] h-[55%] bg-white overflow-hidden">
+      {/* Photo - tightened to original 3.2% */}
+      <div className="absolute left-[3.2%] top-[23.8%] w-[22.2%] h-[53.5%] bg-white overflow-hidden">
         {displayPhoto ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -110,8 +110,8 @@ export function CandidateCard({
         )}
       </div>
 
-      {/* Text fields block - scaled up to match original */}
-      <div className="absolute left-[29%] top-[26%] right-[17%] space-y-[8px]">
+      {/* Text fields block - nudged left 1.5% and bumped to 17px */}
+      <div className="absolute left-[27.5%] top-[25.8%] right-[17%] space-y-[7px]">
         {[
           { label: "NAME", value: name.toUpperCase() },
           { label: "IQAMA/ID NO", value: iqamaNo },
@@ -120,19 +120,19 @@ export function CandidateCard({
           { label: "ISSUED ON", value: formatDDMMYYYY(issuedDate) },
           { label: "VALID UNTIL", value: formatDDMMYYYY(expiryDate) },
         ].map((row) => (
-          <div key={row.label} className="flex gap-[7px] leading-none">
-            <span className="text-[16.5px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+          <div key={row.label} className="flex gap-[6px] leading-none">
+            <span className="text-[17px] font-black text-black tracking-[0.01em] whitespace-nowrap" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
               {row.label} :
             </span>
-            <span className="text-[16.5px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
+            <span className="text-[17px] font-black text-black tracking-[0.005em] truncate" style={{ fontFamily: "Arial Black, Arial, sans-serif" }}>
               {row.value}
             </span>
           </div>
         ))}
       </div>
 
-      {/* QR Code - scaled up */}
-      <div className="absolute right-[3%] bottom-[14%] w-[16.5%] aspect-square bg-white p-[4px] border border-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] flex items-center justify-center">
+      {/* QR Code - scaled up, no shadow */}
+      <div className="absolute right-[3%] bottom-[14%] w-[16.5%] aspect-square bg-white p-[4px] border border-white flex items-center justify-center">
         <QRCodeSVG
           value={verificationUrl}
           size={128}
